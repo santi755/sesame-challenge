@@ -5,6 +5,7 @@
 #### Added
 
 - Initial release of Sesame challenge
+- Added Docker for development purposes
 
 #### Changed
 
