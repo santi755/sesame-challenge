@@ -1,14 +1,9 @@
 <template>
-  <component :is="tag" class="text-xxs font-normal text-fontPrimary">
+  <TypographyBase v-bind="$props" class="text-xxs font-normal text-fontPrimary">
     <slot></slot>
-  </component>
+  </TypographyBase>
 </template>
 
 <script setup lang="ts">
-defineProps({
-  tag: {
-    type: String as PropType<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'>,
-    default: 'p'
-  }
-})
+import TypographyBase from '@/components/atoms/typography/TypographyBase.vue'
 </script>
