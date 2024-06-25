@@ -1,6 +1,6 @@
 <template>
   <BaseTemplate>
-    <TitleSection>Sesame Challenge</TitleSection>
+    <template #title>Reclutamiento</template>
 
     <BaseButton @click="onClick">Click me</BaseButton>
   </BaseTemplate>
