@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import ButtonBase from '@/components/atoms/buttons/ButtonBase.vue';
-import IconBase from '@/components/atoms/icons/IconBase.vue';
+import ButtonBase from '@src/components/atoms/buttons/ButtonBase.vue';
+import IconBase from '@src/components/atoms/icons/IconBase.vue';
 </script>

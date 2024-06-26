@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { icons } from '@/components/atoms/icons/icons';
+import { icons } from '@src/components/atoms/icons/icons';
 
 interface Props {
   icon: keyof typeof icons;

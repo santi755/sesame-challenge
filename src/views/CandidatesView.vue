@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import TemplateBase from '@/components/templates/TemplateBase.vue';
-import StatusPanel from '@/components/patterns/candidate-status-panel/StatusPanel.vue';
+import TemplateBase from '@src/components/templates/TemplateBase.vue';
+import StatusPanel from '@src/components/patterns/candidate-status-panel/StatusPanel.vue';
 </script>

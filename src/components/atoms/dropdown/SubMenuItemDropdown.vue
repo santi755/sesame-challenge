@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import type { SubMenuItem } from '@/types/menu';
+import type { SubMenuItem } from '@src/types/menu';
 
-import LinkDropdownButton from '@/components/atoms/buttons/LinkDropdownButton.vue';
+import LinkDropdownButton from '@src/components/atoms/buttons/LinkDropdownButton.vue';
 
 interface Props {
   items: SubMenuItem[] | undefined;

@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-import TemplateBase from '@/components/templates/TemplateBase.vue';
+import TemplateBase from '@src/components/templates/TemplateBase.vue';
 </script>

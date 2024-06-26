@@ -15,11 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Menu } from '@/types/menu';
+import type { Menu } from '@src/types/menu';
 
-import SubMenuDropdown from '@/components/atoms/dropdown/SubMenuDropdown.vue';
-import DropdownButton from '@/components/atoms/buttons/DropdownButton.vue';
-import SmallTypography from '@/components/atoms/typography/SmallTypography.vue';
+import SubMenuDropdown from '@src/components/atoms/dropdown/SubMenuDropdown.vue';
+import DropdownButton from '@src/components/atoms/buttons/DropdownButton.vue';
+import SmallTypography from '@src/components/atoms/typography/SmallTypography.vue';
 
 interface Props {
   menu: Menu[];
