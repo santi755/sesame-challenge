@@ -23,12 +23,12 @@
 </template>
 
 <script setup lang="ts">
-import type { SubMenu } from '@/types/menu';
+import type { SubMenu } from '@src/types/menu';
 
-import SubMenuItemDropdown from '@/components/atoms/dropdown/SubMenuItemDropdown.vue';
-import DropdownButton from '@/components/atoms/buttons/DropdownButton.vue';
-import SmallTypography from '@/components/atoms/typography/SmallTypography.vue';
-import IconBase from '@/components/atoms/icons/IconBase.vue';
+import SubMenuItemDropdown from '@src/components/atoms/dropdown/SubMenuItemDropdown.vue';
+import DropdownButton from '@src/components/atoms/buttons/DropdownButton.vue';
+import SmallTypography from '@src/components/atoms/typography/SmallTypography.vue';
+import IconBase from '@src/components/atoms/icons/IconBase.vue';
 
 interface Props {
   subMenu: SubMenu[];

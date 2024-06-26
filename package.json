@@ -16,7 +16,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "inversify": "^6.0.2",
     "pinia": "^2.1.7",
+    "reflect-metadata": "^0.2.2",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },

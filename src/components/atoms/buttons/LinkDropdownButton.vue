@@ -14,8 +14,8 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import SmallSemiboldTypography from '@/components/atoms/typography/SmallSemiboldTypography.vue';
-import SmallTypography from '@/components/atoms/typography/SmallTypography.vue';
+import SmallSemiboldTypography from '@src/components/atoms/typography/SmallSemiboldTypography.vue';
+import SmallTypography from '@src/components/atoms/typography/SmallTypography.vue';
 
 const props = defineProps<{
   to: string;

@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import PanelBase from '@/components/atoms/panel/PanelBase.vue';
+import PanelBase from '@src/components/atoms/panel/PanelBase.vue';
 </script>

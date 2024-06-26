@@ -5,13 +5,13 @@
     </TitleMainSection>
 
     <UserAvatar class="h-8 w-8">
-      <img src="@/assets/profile-avatar.png" alt="User avatar" />
+      <img src="@src/assets/profile-avatar.png" alt="User avatar" />
     </UserAvatar>
   </HeaderBase>
 </template>
 
 <script setup lang="ts">
-import HeaderBase from '@/components/atoms/header/HeaderBase.vue';
-import TitleMainSection from '@/components/patterns/main-section/TitleMainSection.vue';
-import UserAvatar from '@/components/patterns/user-avatar/UserAvatar.vue';
+import HeaderBase from '@src/components/atoms/header/HeaderBase.vue';
+import TitleMainSection from '@src/components/patterns/main-section/TitleMainSection.vue';
+import UserAvatar from '@src/components/patterns/user-avatar/UserAvatar.vue';
 </script>

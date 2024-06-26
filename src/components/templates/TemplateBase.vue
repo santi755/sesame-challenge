@@ -15,6 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import NavigationSidebar from '@/components/patterns/navigation-sidebar/NavigationSidebar.vue';
-import MainHeader from '@/components/patterns/main-header/MainHeader.vue';
+import NavigationSidebar from '@src/components/patterns/navigation-sidebar/NavigationSidebar.vue';
+import MainHeader from '@src/components/patterns/main-header/MainHeader.vue';
 </script>

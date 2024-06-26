@@ -4,12 +4,12 @@ const routes = [
   {
     path: '/',
     name: 'Candidates',
-    component: () => import('@/views/CandidatesView.vue')
+    component: () => import('@src/views/CandidatesView.vue')
   },
   {
     path: '/on-boarding',
     name: 'OnBoarding',
-    component: () => import('@/views/OnBoardingView.vue')
+    component: () => import('@src/views/OnBoardingView.vue')
   }
 ];
 

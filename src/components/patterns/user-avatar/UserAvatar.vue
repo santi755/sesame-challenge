@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import AvatarBase from '@/components/atoms/avatar/AvatarBase.vue';
+import AvatarBase from '@src/components/atoms/avatar/AvatarBase.vue';
 </script>

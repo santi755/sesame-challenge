@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import TabPanel from '@/components/atoms/panel/TabPanel.vue';
+import TabPanel from '@src/components/atoms/panel/TabPanel.vue';
 </script>
