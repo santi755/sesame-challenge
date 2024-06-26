@@ -10,7 +10,7 @@ This folder is for custom icons that are available from the design system. These
 ## Usage
 
 ```tsx
-import { IconBase } from '@/components/atoms/icons/IconBase';
+import { IconBase } from '@src/components/atoms/icons/IconBase';
 
 <template>
   <IconBase name="IconName" />

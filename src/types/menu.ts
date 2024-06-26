@@ -1,4 +1,4 @@
-import { icons } from '@/components/atoms/icons/icons';
+import { icons } from '@src/components/atoms/icons/icons';
 
 export interface SubMenuItem {
   name: string;
