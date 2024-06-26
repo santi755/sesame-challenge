@@ -1,5 +1,5 @@
 <template>
-  <TabPanel>
+  <TabPanel class="mt-2">
     <p>Haciendo el tab panel para los cards</p>
   </TabPanel>
 </template>
