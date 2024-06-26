@@ -1,6 +1,5 @@
 services:
   frontend:
-    container_name: frontend
     build:
       context: .
       dockerfile: Dockerfile
@@ -8,6 +7,9 @@ services:
       - "5173:5173"
     volumes:
       - .:/app
-      - /app/node_modules
+      - exclude:/app/node_modules/
     environment:
       - NODE_ENV=development
+
+volumes:
+  exclude:
