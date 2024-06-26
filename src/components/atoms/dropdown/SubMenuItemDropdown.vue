@@ -1,9 +1,9 @@
 <template>
   <LinkDropdownButton
+    :to="item.to"
     v-for="(item, index) in props.items"
     :key="index"
     class="sub-menu-item w-full leading-9"
-    :active="item.active"
   >
     {{ item.name }}
   </LinkDropdownButton>

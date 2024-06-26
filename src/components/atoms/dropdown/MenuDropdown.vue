@@ -1,9 +1,9 @@
 <template>
   <div v-for="(menuItem, index) in props.menu" :key="index">
     <DropdownButton class="py-2" @click="menuItem.showItems = !menuItem.showItems">
-      <SmallTypography class="uppercase text-fontSecondary hover:text-fontPrimary">{{
-        menuItem.name
-      }}</SmallTypography>
+      <SmallTypography class="uppercase text-fontSecondary hover:text-fontPrimary">
+        {{ menuItem.name }}
+      </SmallTypography>
     </DropdownButton>
 
     <ul v-if="menuItem?.items && menuItem.showItems">

@@ -1,6 +1,6 @@
 <template>
   <nav class="pt-2">
-    <MenuDropdown :menu="menu" class="py-3" />
+    <MenuDropdown :menu="menu" />
   </nav>
 </template>
 

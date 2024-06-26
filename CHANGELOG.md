@@ -5,6 +5,7 @@
 #### Added
 
 - Implemented the basic layout for the project
+- Added dropdown menu component
 
 ### [0.1.0] - 2024-06-25
 
