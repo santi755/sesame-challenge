@@ -1,17 +1,21 @@
 <template>
-  <BaseTemplate>
+  <TemplateBase>
     <template #title>Reclutamiento</template>
 
-    <BaseButton @click="onClick">Click me</BaseButton>
-  </BaseTemplate>
+    <template #content>
+      <StatusPanel />
+    </template>
+
+    <ButtonBase @click="onClick">Click me</ButtonBase>
+  </TemplateBase>
 </template>
 
 <script setup lang="ts">
-import BaseTemplate from '@/components/templates/BaseTemplate.vue'
-import TitleSection from '@/components/patterns/section/TitleSection.vue'
-import BaseButton from '@/components/atoms/buttons/BaseButton.vue'
+import TemplateBase from '@/components/templates/TemplateBase.vue';
+import ButtonBase from '@/components/atoms/buttons/ButtonBase.vue';
+import StatusPanel from '@/components/patterns/candidate-status-panel/StatusPanel.vue';
 
 const onClick = () => {
-  alert('Hello, Vue 3 + Vite!')
-}
+  alert('Hello, Vue 3 + Vite!');
+};
 </script>

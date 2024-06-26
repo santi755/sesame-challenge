@@ -36,8 +36,11 @@ export default {
       lineHeight: {
         2: '0.625rem', // 10px
         3: '0.75rem' // 12px
+      },
+      boxShadow: {
+        right: '6px 0px 8px 0px rgba(108, 99, 255, 0.05)'
       }
     }
   },
   plugins: []
-}
+};
