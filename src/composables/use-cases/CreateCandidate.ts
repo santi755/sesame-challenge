@@ -1,9 +1,10 @@
-import { inject } from 'vue';
 import { TYPES } from '@core/config/types';
+
+import useInversifyContainer from '@src/composables/useInversifyContainer';
 import CreateCandidate from '@core/modules/vacancies/application/CreateCandidate';
 
 export default function useCreateCandidate() {
-  const inversifyContainer = inject('inversifyContainer');
+  const { inversifyContainer } = useInversifyContainer();
 
   const createCandidate = inversifyContainer.get<CreateCandidate>(TYPES.CreateCandidate);
 

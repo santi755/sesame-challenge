@@ -6,5 +6,5 @@ export default function useInversifyContainer() {
   if (!inversifyContainer) {
     throw new Error('inversifyContainer not found');
   }
-  return inversifyContainer;
+  return { inversifyContainer };
 }
