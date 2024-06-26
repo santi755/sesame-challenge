@@ -5,6 +5,8 @@
 #### Added
 
 - Implemented the basic layout for the project
+- Added dropdown menu component
+- Added vue-router for navigation
 
 ### [0.1.0] - 2024-06-25
 

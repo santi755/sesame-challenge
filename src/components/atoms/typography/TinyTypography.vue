@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import TypographyBase from '@/components/atoms/typography/TypographyBase.vue'
+import TypographyBase from '@/components/atoms/typography/TypographyBase.vue';
 </script>

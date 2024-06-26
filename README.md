@@ -2,24 +2,23 @@
 
 This project is a solution to the Sesame HR challenge. It is a simple web application that allows users to manage vacancies and candidates.
 
-## Project Setup with Docker
+### 1- Project Setup with Docker
 
 ```sh
 docker build -t sesame-challenge-frontend .
 ```
 
-### Compile and Hot-Reload for Development
+### 2- Compile and Hot-Reload for Development
 
 ```sh
 docker compose up -d # or docker compose up if you want to see the logs
 ```
 
+### 3- Accessing the application
 
+The application will be available at [http://localhost:5173/](http://localhost:5173/)
 
-
-
-
-
+---
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 

@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-fontLight">
+  <aside class="bg-fontLight">
     <slot></slot>
-  </nav>
+  </aside>
 </template>

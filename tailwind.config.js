@@ -24,6 +24,7 @@ export default {
         background50: '#F8FAFC',
         fontSecondary: '#64748B',
         fontLink: '#6C63FF',
+        fontLinkLight: '#F0EFFF',
         accentGrass200: '#22C55E',
         accentTurquoise200: '#14B8A6',
         extracolorA300: '#ED6F6F',
