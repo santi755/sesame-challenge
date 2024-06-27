@@ -3,6 +3,7 @@ import { TYPES } from '@core/config/types';
 
 import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRepository';
 import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
+import VacancyIdNotFoundException from '@core/modules/vacancies/application/exceptions/VacancyIdNotFoundException';
 
 @injectable()
 export default class ListCandidatesByVacancy {
@@ -13,7 +14,7 @@ export default class ListCandidatesByVacancy {
 
   async execute(vacancyId: string): Promise<Candidate[]> {
     if (!vacancyId) {
-      throw new Error('Vacancy ID is required'); // Create custom error class, e.g. MissingVacancyIdError
+      throw new VacancyIdNotFoundException();
     }
 
     return this.candidateRepository.findAll(vacancyId);

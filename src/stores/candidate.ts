@@ -9,10 +9,14 @@ export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
 
   const listCandidatesByVacancy = async () => {
-    const { listCandidatesByVacancy } = useListCandidatesByVacancy();
-    candidates.value = await listCandidatesByVacancy.execute(
-      EnvConfig.get('VITE_APP_SESAME_VACANCY_ID')
-    );
+    try {
+      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
+      const { listCandidatesByVacancy } = useListCandidatesByVacancy();
+      const response = await listCandidatesByVacancy.execute(vacancyId);
+      candidates.value = response.data;
+    } catch (error) {
+      // TODO: Implement error handling logic
+    }
   };
 
   return {
