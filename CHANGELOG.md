@@ -1,5 +1,13 @@
 # Sesame challenge Changelog
 
+### [0.1.2] - 2024-06-27
+
+#### Added
+
+- Added connection to the API from infrastructure layer
+- Added the first use case for the project
+- Created the connection between Vue and Core using Composables, Pinia and Inversify
+
 ### [0.1.1] - 2024-06-26
 
 #### Added
