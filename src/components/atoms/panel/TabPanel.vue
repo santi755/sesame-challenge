@@ -1,6 +1,7 @@
 <template>
   <PanelBase class="pr-4 pb-4 pl-4">
-    <slot></slot>
+    <slot name="options"></slot>
+    <slot name="header"></slot>
   </PanelBase>
 </template>
 

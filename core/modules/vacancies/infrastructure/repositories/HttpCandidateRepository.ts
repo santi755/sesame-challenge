@@ -15,9 +15,8 @@ class HttpCandidateRepository implements CandidateRepository {
   save(candidate: Candidate): Promise<Candidate> {
     return this.httpConnector.post<Candidate>('/candidates', candidate);
   }
-  update(candidate: Candidate): Promise<Candidate> {
-    console.log('Candidate updated: ', candidate);
-    throw new Error('Method not implemented.');
+  update(candidateId: string, candidate: Candidate): Promise<Candidate> {
+    return this.httpConnector.put<Candidate>(`/candidates/${candidateId}`, candidate);
   }
   findAll(vacancyId: string): Promise<Candidate[]> {
     return this.httpConnector.get<Candidate[]>(`/vacancies/${vacancyId}/candidates`);

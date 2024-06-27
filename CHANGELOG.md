@@ -1,5 +1,13 @@
 # Sesame challenge Changelog
 
+### [0.1.3] - 2024-06-27
+
+#### Added
+
+- Implemented all the use cases for the project
+- Integrated Vue store with the use cases
+- Created Create / Update candidate modal
+
 ### [0.1.2] - 2024-06-27
 
 #### Added

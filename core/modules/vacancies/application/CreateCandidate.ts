@@ -12,10 +12,14 @@ export default class CreateCandidate {
   ) {}
 
   async execute(candidate: Candidate): Promise<Candidate> {
-    if (!candidate) {
-      throw new Error('Candidate is required');
-    }
+    this.validateCandidate(candidate);
 
     return this.candidateRepository.save(candidate);
+  }
+
+  private validateCandidate(candidate: Candidate): void {
+    if (!candidate) {
+      throw new Error('Candidate not found');
+    }
   }
 }

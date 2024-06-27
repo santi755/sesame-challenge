@@ -7,6 +7,11 @@ import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
 
 export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
+  const showCandidateModal = ref(false);
+
+  const toggleCandidateModal = (show: boolean) => {
+    showCandidateModal.value = show;
+  };
 
   const listCandidatesByVacancy = async () => {
     try {
@@ -21,6 +26,8 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   return {
     candidates,
+    showCandidateModal,
+    toggleCandidateModal,
     listCandidatesByVacancy
   };
 });
