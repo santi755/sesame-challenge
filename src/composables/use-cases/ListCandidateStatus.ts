@@ -9,7 +9,7 @@ export default function useListCandidateStatus() {
   const listCandidateStatus = inversifyContainer.get<ListCandidateStatus>(
     TYPES.ListCandidateStatus
   );
-  console.log('listCandidateStatus => ', listCandidateStatus);
+
   if (!listCandidateStatus) {
     throw new Error('CreateCandidate not found');
   }

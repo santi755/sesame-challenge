@@ -12,7 +12,6 @@ export const useCandidateStatusStore = defineStore('candidateStatus', () => {
     try {
       const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { listCandidateStatus } = useListCandidateStatus();
-      console.log('llega1');
       const response = await listCandidateStatus.execute(vacancyId);
       candidateStatus.value = response.data;
     } catch (error) {

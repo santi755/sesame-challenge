@@ -12,7 +12,6 @@ export default class ListCandidateStatus {
   ) {}
 
   async execute(vacancyId: string): Promise<CandidateStatus[]> {
-    console.log('vacancyId vacancyId => ', vacancyId);
     return this.candidateStatusRepository.findAll(vacancyId);
   }
 }
