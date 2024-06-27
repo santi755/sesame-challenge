@@ -12,9 +12,8 @@
 import TemplateBase from '@src/components/templates/TemplateBase.vue';
 import StatusPanel from '@src/components/patterns/candidate-status-panel/StatusPanel.vue';
 
-// Testing inversify
-import useCreateCandidate from '@src/composables/use-cases/CreateCandidate';
+import { useCandidateStore } from '@src/stores/candidate';
 
-const { createCandidate } = useCreateCandidate();
-createCandidate.execute();
+const candidateStore = useCandidateStore();
+candidateStore.listCandidatesByVacancy();
 </script>

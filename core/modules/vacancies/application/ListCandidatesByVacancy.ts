@@ -5,14 +5,17 @@ import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRe
 import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
 
 @injectable()
-export default class CreateCandidate {
+export default class ListCandidatesByVacancy {
   constructor(
     @inject(TYPES.CandidateRepository)
     private candidateRepository: CandidateRepository
   ) {}
 
-  async execute(candidate: Candidate): Promise<Candidate> {
-    console.log(import.meta.env.VITE_APP_SESAME_API_URL);
-    return this.candidateRepository.save(candidate);
+  async execute(vacancyId: string): Promise<Candidate[]> {
+    if (!vacancyId) {
+      throw new Error('Vacancy ID is required'); // Create custom error class, e.g. MissingVacancyIdError
+    }
+
+    return this.candidateRepository.findAll(vacancyId);
   }
 }
