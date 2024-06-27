@@ -12,7 +12,10 @@ export default class CreateCandidate {
   ) {}
 
   async execute(candidate: Candidate): Promise<Candidate> {
-    console.log(import.meta.env.VITE_APP_SESAME_API_URL);
+    if (!candidate) {
+      throw new Error('Candidate is required');
+    }
+
     return this.candidateRepository.save(candidate);
   }
 }
