@@ -13,10 +13,14 @@ export default class ListCandidatesByVacancy {
   ) {}
 
   async execute(vacancyId: string): Promise<Candidate[]> {
+    this.validateVacancyId(vacancyId);
+
+    return this.candidateRepository.findAll(vacancyId);
+  }
+
+  private validateVacancyId(vacancyId: string): void {
     if (!vacancyId) {
       throw new VacancyIdNotFoundException();
     }
-
-    return this.candidateRepository.findAll(vacancyId);
   }
 }

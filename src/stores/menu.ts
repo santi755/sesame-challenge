@@ -16,13 +16,11 @@ export const useMenuStore = defineStore('menu', () => {
           items: [
             {
               name: 'Reclutamiento',
-              to: '/',
-              active: true // Aux prop to know which item is active
+              to: '/'
             },
             {
               name: 'OnBoarding',
-              to: '/on-boarding',
-              active: false // Aux prop to know which item is active
+              to: '/on-boarding'
             }
           ]
         }

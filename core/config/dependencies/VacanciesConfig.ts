@@ -7,6 +7,8 @@ import HttpCandidateStatusRepository from '@core/modules/vacancies/infrastructur
 import type CandidateStatusRepository from '@core/modules/vacancies/domain/CandidateStatusRepository';
 import CreateCandidate from '@core/modules/vacancies/application/CreateCandidate';
 import ListCandidatesByVacancy from '@core/modules/vacancies/application/ListCandidatesByVacancy';
+import UpdateCandidate from '@core/modules/vacancies/application/UpdateCandidate';
+import ListCandidateStatus from '@core/modules/vacancies/application/ListCandidateStatus';
 
 export function configureVacancies(container: Container) {
   // Repositories
@@ -20,4 +22,6 @@ export function configureVacancies(container: Container) {
   container
     .bind<ListCandidatesByVacancy>(TYPES.ListCandidatesByVacancy)
     .to(ListCandidatesByVacancy);
+  container.bind<UpdateCandidate>(TYPES.UpdateCandidate).to(UpdateCandidate);
+  container.bind<ListCandidateStatus>(TYPES.ListCandidateStatus).to(ListCandidateStatus);
 }

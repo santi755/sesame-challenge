@@ -2,7 +2,6 @@ import { icons } from '@src/components/atoms/icons/icons';
 
 export interface SubMenuItem {
   name: string;
-  active: boolean;
   to: string;
 }
 
