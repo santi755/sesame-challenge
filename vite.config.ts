@@ -11,5 +11,21 @@ export default defineConfig({
       '@src': fileURLToPath(new URL('./src', import.meta.url)),
       '@core': fileURLToPath(new URL('./core', import.meta.url))
     }
+  },
+  esbuild: {
+    tsconfigRaw: {
+      compilerOptions: {
+        experimentalDecorators: true
+      }
+    }
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      tsconfigRaw: {
+        compilerOptions: {
+          experimentalDecorators: true
+        }
+      }
+    }
   }
 });
