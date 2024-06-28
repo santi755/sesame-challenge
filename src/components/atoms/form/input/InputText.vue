@@ -12,26 +12,28 @@
             class="inline-block absolute left-0 ml-3 text-fontTertiary"
           />
         </template>
-        <InputBase :placeholder="placeholder" :class="{ 'px-8': props.icon }" class="text-sm" />
+        <InputBase
+          :value="props.modelValue"
+          @input="handleInput"
+          :placeholder="placeholder"
+          :class="{ 'px-8': props.icon }"
+          class="text-sm"
+        />
       </div>
     </label>
   </div>
-  <!--
-  <label class="flex flex-col">
-    <span v-if="props.label === ''" class="text-sm font-semibold text-fontPrimary">
-      {{ props.label }}
-    </span>
-
-    <InputBase :placeholder="placeholder" />
-  </label>
-  -->
 </template>
 
 <script setup lang="ts">
 import InputBase from '@src/components/atoms/form/input/InputBase.vue';
 import IconBase from '@src/components/atoms/icons/IconBase.vue';
 import ExtraSmallTypography from '@src/components/atoms/typography/ExtraSmallTypography.vue';
+import useModelValue from '@src/composables/useModelValue';
 import type { InputText } from '@src/types/form';
 
+//TODO: Implement required prop to validate input
 const props = defineProps<InputText>();
+const emit = defineEmits(['update:modelValue']);
+
+const { handleInput } = useModelValue(props, emit);
 </script>
