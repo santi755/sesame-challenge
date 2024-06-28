@@ -15,7 +15,7 @@ export const useCandidateStatusStore = defineStore('candidateStatus', () => {
       const response = await listCandidateStatus.execute(vacancyId);
       candidateStatus.value = candidateStatusAdapter(response.data);
     } catch (error) {
-      console.log('error => ', error); // TODO: Implement error handling logic
+      console.log(error); // TODO: Implement error handling logic
     }
   };
 

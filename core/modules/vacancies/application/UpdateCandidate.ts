@@ -13,7 +13,7 @@ export default class UpdateCandidate {
     private candidateRepository: CandidateRepository
   ) {}
 
-  async execute(candidateId: string, candidate: Candidate): Promise<Candidate> {
+  async execute(candidateId: string, candidate: Candidate): Promise<{ data: Candidate }> {
     this.validateCandidateId(candidateId);
     this.validateCandidate(candidate);
 

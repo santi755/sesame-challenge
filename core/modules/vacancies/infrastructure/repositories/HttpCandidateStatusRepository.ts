@@ -11,8 +11,8 @@ class HttpCandidateStatusRepository implements CandidateStatusRepository {
     private httpConnector: HttpConnector
   ) {}
 
-  findAll(vacancyId: string): Promise<CandidateStatus[]> {
-    return this.httpConnector.get<CandidateStatus[]>(`/candidate-status/${vacancyId}`);
+  findAll(vacancyId: string): Promise<{ data: CandidateStatus[] }> {
+    return this.httpConnector.get<{ data: CandidateStatus[] }>(`/candidate-status/${vacancyId}`);
   }
 }
 

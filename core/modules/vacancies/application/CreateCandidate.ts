@@ -11,7 +11,7 @@ export default class CreateCandidate {
     private candidateRepository: CandidateRepository
   ) {}
 
-  async execute(candidateDto: CreateCandidateDTO, vacancyId: string): Promise<Candidate> {
+  async execute(candidateDto: CreateCandidateDTO, vacancyId: string): Promise<{ data: Candidate }> {
     this.validateCandidate(candidateDto);
 
     const candidate: Candidate = {
