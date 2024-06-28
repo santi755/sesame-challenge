@@ -1,10 +1,5 @@
-import { inject } from 'vue';
+import container from '@core/config/inversifyConfig';
 
 export default function useInversifyContainer() {
-  const inversifyContainer = inject('inversifyContainer');
-
-  if (!inversifyContainer) {
-    throw new Error('inversifyContainer not found');
-  }
-  return { inversifyContainer };
+  return { inversifyContainer: container };
 }
