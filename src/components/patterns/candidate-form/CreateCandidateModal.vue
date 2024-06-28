@@ -2,7 +2,7 @@
   <ModalBase v-if="candidateStore.showCandidateModal" @close="closeModal">
     <template #title> Añadir candidato </template>
     <template #content>
-      <CandidateForm ref="candidateForm" />
+      <CandidateForm ref="candidateData" />
     </template>
     <template #button-cancel> Cancelar </template>
     <template #button-action> Añadir </template>
@@ -17,15 +17,15 @@ import type { CreateCandidateDTO } from '@core/modules/vacancies/domain/Candidat
 import { useCandidateStore } from '@src/stores/candidate';
 
 const candidateStore = useCandidateStore();
-const candidateForm = ref<CreateCandidateDTO>();
+const candidateData = ref<{ candidate: CreateCandidateDTO }>();
 
 const closeModal = (submit: boolean) => {
-  if (!candidateForm.value) {
+  if (!candidateData.value) {
     return;
   }
 
   if (submit) {
-    candidateStore.createCandidate(candidateForm.value);
+    candidateStore.createCandidate(candidateData.value.candidate);
   }
   candidateStore.toggleCandidateModal(false);
 };
