@@ -7,13 +7,15 @@ import { computed } from 'vue';
 import { icons } from '@src/components/atoms/icons/icons';
 
 interface Props {
-  icon: keyof typeof icons;
+  icon?: keyof typeof icons;
   size: number;
 }
 
 const props = defineProps<Props>();
 
 const iconComponent = computed(() => {
+  if (!props.icon) return null;
+
   return icons[props.icon] || null;
 });
 

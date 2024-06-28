@@ -1,6 +1,6 @@
 <template>
-  <ButtonBase class="bg-fontPrimary hover:bg-fontLink">
-    <SmallTypography class="w-full text-fontLight text-center">
+  <ButtonBase class="secondary-button bg-fontLight hover:bg-fontLinkLight">
+    <SmallTypography class="w-full text-fontPrimary text-center">
       <slot></slot>
     </SmallTypography>
   </ButtonBase>
@@ -10,3 +10,9 @@
 import ButtonBase from '@src/components/atoms/buttons/ButtonBase.vue';
 import SmallTypography from '@src/components/atoms/typography/SmallTypography.vue';
 </script>
+
+<style scoped>
+.secondary-button {
+  box-shadow: inset 0 0 0 0.094rem rgb(var(--fontPrimary));
+}
+</style>

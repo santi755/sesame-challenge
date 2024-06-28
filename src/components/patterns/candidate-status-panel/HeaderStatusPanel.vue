@@ -1,6 +1,8 @@
 <template>
   <div class="flex justify-between items-center">
-    <InputText placeholder="Buscar" />
+    <div class="w-1/4">
+      <InputText placeholder="Buscar" icon="SearchIcon" />
+    </div>
     <PrimaryButton @click="candidateStore.toggleCandidateModal(true)">
       Añadir candidato
     </PrimaryButton>

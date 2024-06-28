@@ -1,5 +1,5 @@
 <template>
-  <TypographyBase v-bind="$props" class="text-sm font-normal text-fontPrimary">
+  <TypographyBase v-bind="$props" class="text-sm font-normal">
     <slot></slot>
   </TypographyBase>
 </template>
