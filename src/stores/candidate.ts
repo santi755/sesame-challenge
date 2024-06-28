@@ -2,8 +2,9 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 import useListCandidatesByVacancy from '@src/composables/use-cases/ListCandidatesByVacancy';
+import useCreateCandidate from '@src/composables/use-cases/CreateCandidate';
 import EnvConfig from '@core/config/env/EnvConfig';
-import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
+import type { Candidate, CreateCandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 
 export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
@@ -13,6 +14,17 @@ export const useCandidateStore = defineStore('candidate', () => {
     showCandidateModal.value = show;
   };
 
+  const createCandidate = async (candidate: CreateCandidateDTO) => {
+    try {
+      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
+      const { createCandidate } = useCreateCandidate();
+      await createCandidate.execute(candidate, vacancyId);
+      listCandidatesByVacancy();
+    } catch (error) {
+      console.log(error); // TODO: Implement error handling logic
+    }
+  };
+
   const listCandidatesByVacancy = async () => {
     try {
       const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
@@ -20,7 +32,7 @@ export const useCandidateStore = defineStore('candidate', () => {
       const response = await listCandidatesByVacancy.execute(vacancyId);
       candidates.value = response.data;
     } catch (error) {
-      // TODO: Implement error handling logic
+      console.log(error); // TODO: Implement error handling logic
     }
   };
 
@@ -28,6 +40,7 @@ export const useCandidateStore = defineStore('candidate', () => {
     candidates,
     showCandidateModal,
     toggleCandidateModal,
-    listCandidatesByVacancy
+    listCandidatesByVacancy,
+    createCandidate
   };
 });

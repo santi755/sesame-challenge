@@ -13,11 +13,20 @@ export const useCandidateStatusStore = defineStore('candidateStatus', () => {
       const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { listCandidateStatus } = useListCandidateStatus();
       const response = await listCandidateStatus.execute(vacancyId);
-      candidateStatus.value = response.data;
+      candidateStatus.value = candidateStatusAdapter(response.data);
     } catch (error) {
-      console.log('error => ', error);
-      // TODO: Implement error handling logic
+      console.log('error => ', error); // TODO: Implement error handling logic
     }
+  };
+
+  const candidateStatusAdapter = (status: CandidateStatus[]) => {
+    const sortedStatus = status.sort((a, b) => a.order - b.order);
+
+    return sortedStatus.map((status: CandidateStatus) => ({
+      id: status.id,
+      name: status.name,
+      order: status.order
+    }));
   };
 
   return {

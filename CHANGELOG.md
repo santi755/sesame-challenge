@@ -1,5 +1,16 @@
 # Sesame challenge Changelog
 
+### [0.1.4] - 2024-06-28
+
+#### Added
+
+- Added modelValue props to form components
+
+#### Change
+
+- Refactor the way to inject the inversify container in the Vue app
+- Refactor createCandidate to use DTOs
+
 ### [0.1.3] - 2024-06-27
 
 #### Added
