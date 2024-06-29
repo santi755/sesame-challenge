@@ -11,7 +11,7 @@ export default function useListCandidatesByVacancy() {
   );
 
   if (!listCandidatesByVacancy) {
-    throw new Error('CreateCandidate not found');
+    throw new Error('listCandidatesByVacancy not found');
   }
 
   return { listCandidatesByVacancy };

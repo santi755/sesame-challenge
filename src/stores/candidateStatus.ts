@@ -2,8 +2,8 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 import useListCandidateStatus from '@src/composables/use-cases/ListCandidateStatus';
-import EnvConfig from '@core/config/env/EnvConfig';
 import type { CandidateStatus } from '@core/modules/vacancies/domain/CandidateStatus';
+import EnvConfig from '@core/config/env/EnvConfig';
 
 export const useCandidateStatusStore = defineStore('candidateStatus', () => {
   const candidateStatus = ref<CandidateStatus[]>([]);

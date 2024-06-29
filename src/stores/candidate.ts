@@ -3,9 +3,9 @@ import { defineStore } from 'pinia';
 
 import useListCandidatesByVacancy from '@src/composables/use-cases/ListCandidatesByVacancy';
 import useCreateCandidate from '@src/composables/use-cases/CreateCandidate';
-import EnvConfig from '@core/config/env/EnvConfig';
 import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 import useUpdateCandidate from '@src/composables/use-cases/UpdateCandidate';
+import EnvConfig from '@core/config/env/EnvConfig';
 
 export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
@@ -46,6 +46,7 @@ export const useCandidateStore = defineStore('candidate', () => {
   const candidatesAdapter = (candidates: Candidate[]) => {
     return candidates.map((candidate: Candidate) => ({
       id: candidate.id,
+      updatedAt: candidate.updatedAt,
       firstName: candidate.firstName,
       lastName: candidate.lastName,
       statusId: candidate.statusId,

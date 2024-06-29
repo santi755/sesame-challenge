@@ -11,7 +11,7 @@ export default function useListCandidateStatus() {
   );
 
   if (!listCandidateStatus) {
-    throw new Error('CreateCandidate not found');
+    throw new Error('listCandidateStatus not found');
   }
 
   return { listCandidateStatus };
