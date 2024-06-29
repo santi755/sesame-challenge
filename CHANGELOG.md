@@ -1,5 +1,17 @@
 # Sesame challenge Changelog
 
+### [0.1.5] - 2024-06-29
+
+#### Added
+
+- Added new icons to the project
+- Created the candidate status layout
+
+#### Changed
+
+- Icons types refactored
+- Refactored candidate form and implemented the use case to create and update candidates
+
 ### [0.1.4] - 2024-06-28
 
 #### Added
