@@ -1,3 +1,4 @@
+// TODO: Refactor to type as enum
 export default class EnvConfig {
   static get(key: string): string {
     const env = import.meta.env;
