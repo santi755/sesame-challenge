@@ -1,7 +1,6 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-import EnvConfig from '@core/config/env/EnvConfig';
 import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 
 import { useVacancyStore } from '@src/stores/vacancy';
@@ -11,6 +10,16 @@ import useUpdateCandidate from '@src/composables/use-cases/UpdateCandidate';
 
 export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
+  const searchText = ref('');
+
+  const getCandidatesFiltered = () => {
+    return candidates.value.filter((candidate) => {
+      const completeName = `${candidate.firstName} ${candidate.lastName}`.toLowerCase();
+      const search = searchText.value.toLowerCase();
+
+      return completeName.includes(search);
+    });
+  };
 
   const vacancyStore = useVacancyStore();
   const vacancyId = vacancyStore.getVacancyId();
@@ -58,6 +67,8 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   return {
     candidates,
+    searchText,
+    getCandidatesFiltered,
     listCandidatesByVacancy,
     createCandidate,
     updateCandidate

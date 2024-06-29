@@ -29,7 +29,9 @@ const props = defineProps<{
 }>();
 
 const candidateStore = useCandidateStore();
+
 const filteredCandidates = computed(() => {
-  return candidateStore.candidates.filter((candidate) => candidate.statusId === props.status.id);
+  const candidates = candidateStore.getCandidatesFiltered();
+  return candidates.filter((candidate) => candidate.statusId === props.status.id);
 });
 </script>
