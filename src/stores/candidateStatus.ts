@@ -1,16 +1,18 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
+import { useVacancyStore } from '@src/stores/vacancy';
 import useListCandidateStatus from '@src/composables/use-cases/ListCandidateStatus';
 import type { CandidateStatus } from '@core/modules/vacancies/domain/CandidateStatus';
-import EnvConfig from '@core/config/env/EnvConfig';
 
 export const useCandidateStatusStore = defineStore('candidateStatus', () => {
   const candidateStatus = ref<CandidateStatus[]>([]);
 
+  const vacancyStore = useVacancyStore();
+  const vacancyId = vacancyStore.getVacancyId();
+
   const listCandidateStatus = async () => {
     try {
-      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { listCandidateStatus } = useListCandidateStatus();
       const response = await listCandidateStatus.execute(vacancyId);
       candidateStatus.value = candidateStatusAdapter(response.data);

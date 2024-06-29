@@ -18,5 +18,13 @@ export const useVacancyStore = defineStore('vacancy', () => {
     }
   };
 
-  return { vacancy, loadVacancy };
+  const getVacancyId = () => {
+    if (!vacancy.value?.id) {
+      throw new Error('Vacancy Id not found'); // TODO: Implement error handling logic
+    }
+
+    return vacancy.value?.id;
+  };
+
+  return { vacancy, loadVacancy, getVacancyId };
 });

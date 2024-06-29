@@ -1,18 +1,22 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
+import EnvConfig from '@core/config/env/EnvConfig';
+import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
+
+import { useVacancyStore } from '@src/stores/vacancy';
 import useListCandidatesByVacancy from '@src/composables/use-cases/ListCandidatesByVacancy';
 import useCreateCandidate from '@src/composables/use-cases/CreateCandidate';
-import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 import useUpdateCandidate from '@src/composables/use-cases/UpdateCandidate';
-import EnvConfig from '@core/config/env/EnvConfig';
 
 export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
 
+  const vacancyStore = useVacancyStore();
+  const vacancyId = vacancyStore.getVacancyId();
+
   const createCandidate = async (candidate: CandidateDTO) => {
     try {
-      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { createCandidate } = useCreateCandidate();
       await createCandidate.execute(candidate, vacancyId);
       listCandidatesByVacancy();
@@ -23,7 +27,6 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   const updateCandidate = async (candidateId: string, candidate: CandidateDTO) => {
     try {
-      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { updateCandidate } = useUpdateCandidate();
       await updateCandidate.execute(candidateId, candidate, vacancyId);
       listCandidatesByVacancy();
@@ -34,7 +37,6 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   const listCandidatesByVacancy = async () => {
     try {
-      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
       const { listCandidatesByVacancy } = useListCandidatesByVacancy();
       const response = await listCandidatesByVacancy.execute(vacancyId);
       candidates.value = candidatesAdapter(response.data);
