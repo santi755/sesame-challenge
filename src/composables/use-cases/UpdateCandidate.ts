@@ -9,7 +9,7 @@ export default function useUpdateCandidate() {
   const updateCandidate = inversifyContainer.get<UpdateCandidate>(TYPES.UpdateCandidate);
 
   if (!updateCandidate) {
-    throw new Error('CreateCandidate not found');
+    throw new Error('updateCandidate not found');
   }
 
   return { updateCandidate };

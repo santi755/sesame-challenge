@@ -1,5 +1,31 @@
 # Sesame challenge Changelog
 
+### [0.1.5] - 2024-06-29
+
+#### Added
+
+- Added new icons to the project
+- Created the candidate status layout
+- Search candidates by name
+
+#### Changed
+
+- Icons types refactored
+- Refactored candidate form and implemented the use case to create and update candidates
+- Refactored vacancyId usage
+
+### [0.1.4] - 2024-06-28
+
+#### Added
+
+- Added modelValue props to form components
+- Added colors from api to the candidate status
+
+#### Change
+
+- Refactor the way to inject the inversify container in the Vue app
+- Refactor createCandidate to use DTOs
+
 ### [0.1.3] - 2024-06-27
 
 #### Added

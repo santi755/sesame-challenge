@@ -12,14 +12,14 @@ class HttpCandidateRepository implements CandidateRepository {
     private httpConnector: HttpConnector
   ) {}
 
-  save(candidate: Candidate): Promise<Candidate> {
-    return this.httpConnector.post<Candidate>('/candidates', candidate);
+  save(candidate: Candidate): Promise<{ data: Candidate }> {
+    return this.httpConnector.post<{ data: Candidate }>('/candidates', candidate);
   }
-  update(candidateId: string, candidate: Candidate): Promise<Candidate> {
-    return this.httpConnector.put<Candidate>(`/candidates/${candidateId}`, candidate);
+  update(candidateId: string, candidate: Candidate): Promise<{ data: Candidate }> {
+    return this.httpConnector.put<{ data: Candidate }>(`/candidates/${candidateId}`, candidate);
   }
-  findAll(vacancyId: string): Promise<Candidate[]> {
-    return this.httpConnector.get<Candidate[]>(`/vacancies/${vacancyId}/candidates`);
+  findAll(vacancyId: string): Promise<{ data: Candidate[] }> {
+    return this.httpConnector.get<{ data: Candidate[] }>(`/vacancies/${vacancyId}/candidates`);
   }
 }
 

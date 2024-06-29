@@ -1,20 +1,11 @@
 <template>
   <div class="flex justify-between items-center">
-    <InputText placeholder="Buscar" />
-    <PrimaryButton @click="candidateStore.toggleCandidateModal(true)">
-      Añadir candidato
-    </PrimaryButton>
-
-    <CreateCandidateModal />
+    <SearchCandidateHeader class="w-1/4" />
+    <AddCandidateHeader />
   </div>
 </template>
 
 <script setup lang="ts">
-import PrimaryButton from '@src/components/atoms/buttons/PrimaryButton.vue';
-import InputText from '@src/components/atoms/form/input/InputText.vue';
-import CreateCandidateModal from '@src/components/patterns/candidate-form/CreateCandidateModal.vue';
-
-import { useCandidateStore } from '@src/stores/candidate';
-
-const candidateStore = useCandidateStore();
+import SearchCandidateHeader from '@src/components/patterns/candidate-status-panel/header/SearchCandidateHeader.vue';
+import AddCandidateHeader from '@src/components/patterns/candidate-status-panel/header/AddCandidateHeader.vue';
 </script>

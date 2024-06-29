@@ -3,7 +3,7 @@
     <div class="container mx-auto flex h-screen border-r border-neutral200 bg-background50">
       <NavigationSidebar class="w-1/5"></NavigationSidebar>
 
-      <div class="flex-1 px-6 py-2">
+      <div class="flex-1 px-6 py-2 w-4/5">
         <MainHeader>
           <slot name="title"></slot>
         </MainHeader>

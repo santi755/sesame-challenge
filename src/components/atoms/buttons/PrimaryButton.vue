@@ -1,8 +1,6 @@
 <template>
-  <ButtonBase
-    class="primary-button flex justify-between w-auto items-center bg-fontPrimary rounded-xl py-2 px-3 hover:bg-fontLink"
-  >
-    <SmallTypography class="text-fontLight">
+  <ButtonBase class="bg-fontPrimary hover:bg-fontLink">
+    <SmallTypography class="w-full text-fontLight text-center">
       <slot></slot>
     </SmallTypography>
   </ButtonBase>
@@ -12,9 +10,3 @@
 import ButtonBase from '@src/components/atoms/buttons/ButtonBase.vue';
 import SmallTypography from '@src/components/atoms/typography/SmallTypography.vue';
 </script>
-
-<style scoped>
-.primary-button {
-  cursor: pointer;
-}
-</style>

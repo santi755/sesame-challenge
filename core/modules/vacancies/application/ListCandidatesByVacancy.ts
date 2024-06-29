@@ -12,7 +12,7 @@ export default class ListCandidatesByVacancy {
     private candidateRepository: CandidateRepository
   ) {}
 
-  async execute(vacancyId: string): Promise<Candidate[]> {
+  async execute(vacancyId: string): Promise<{ data: Candidate[] }> {
     this.validateVacancyId(vacancyId);
 
     return this.candidateRepository.findAll(vacancyId);

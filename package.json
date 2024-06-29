@@ -20,7 +20,8 @@
     "pinia": "^2.1.7",
     "reflect-metadata": "^0.2.2",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

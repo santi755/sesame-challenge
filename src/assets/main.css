@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* https://www.sitepoint.com/theming-tailwind-css-variables-clean-architecture/ */
+@layer base {
+  :root {
+    --fontPrimary: 31 45 82;
+    --fontTertiary: 148 163 184;
+    --accentBlue200: 59 130 246;
+    --neutral200: 226 232 240;
+    --background50: 248 250 252;
+    --fontSecondary: 100 116 139;
+    --fontLink: 108 99 255;
+    --fontLinkLight: 240 239 255;
+    --accentGrass200: 34 197 94;
+    --accentTurquoise200: 20 184 166;
+    --extracolorA300: 237 111 111;
+    --fontLight: 255 255 255;
+    --neutral100: 241 245 249;
+    --neutral300: 203 213 225;
+  }
+}

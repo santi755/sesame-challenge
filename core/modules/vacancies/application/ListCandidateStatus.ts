@@ -11,7 +11,7 @@ export default class ListCandidateStatus {
     private candidateStatusRepository: CandidateStatusRepository
   ) {}
 
-  async execute(vacancyId: string): Promise<CandidateStatus[]> {
+  async execute(vacancyId: string): Promise<{ data: CandidateStatus[] }> {
     return this.candidateStatusRepository.findAll(vacancyId);
   }
 }
