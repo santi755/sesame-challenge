@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <label class="block text-sm font-medium text-fontPrimary">
-      <ExtraSmallTypography v-if="props.label" tag="span" class="block capitalize mb-2">
+      <ExtraSmallTypography v-if="props.label" tag="span" class="block mb-2">
         {{ props.label }}
       </ExtraSmallTypography>
 

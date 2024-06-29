@@ -23,7 +23,7 @@ const props = defineProps<Props>();
 
 <style scoped>
 .sub-menu-item {
-  margin-left: 0.45rem;
+  margin-left: 1.188rem;
   padding-left: 0.95rem;
 }
 </style>
