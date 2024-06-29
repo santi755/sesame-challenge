@@ -1,6 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: {
+    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    options: {
+      safelist: [
+        'bg-accentGrass200',
+        'bg-accentBlue200',
+        'bg-accentTurquoise200',
+        'bg-extracolorA300',
+        'text-accentGrass200',
+        'text-accentBlue200',
+        'text-accentTurquoise200',
+        'text-extracolorA300'
+      ]
+    }
+  },
   content: [],
   theme: {
     extend: {
@@ -18,6 +32,7 @@ export default {
       },
       // https://tailwindcss.com/docs/customizing-colors#using-css-variables
       colors: {
+        accentGrass200: 'rgb(var(--accentGrass200) / <alpha-value>)',
         fontPrimary: 'rgb(var(--fontPrimary) / <alpha-value>)',
         fontTertiary: 'rgb(var(--fontTertiary) / <alpha-value>)',
         accentBlue200: 'rgb(var(--accentBlue200) / <alpha-value>)',
@@ -26,7 +41,6 @@ export default {
         fontSecondary: 'rgb(var(--fontSecondary) / <alpha-value>)',
         fontLink: 'rgb(var(--fontLink) / <alpha-value>)',
         fontLinkLight: 'rgb(var(--fontLinkLight) / <alpha-value>)',
-        accentGrass200: 'rgb(var(--accentGrass200) / <alpha-value>)',
         accentTurquoise200: 'rgb(var(--accentTurquoise200) / <alpha-value>)',
         extracolorA300: 'rgb(var(--extracolorA300) / <alpha-value>)',
         fontLight: 'rgb(var(--fontLight) / <alpha-value>)',
