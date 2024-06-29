@@ -1,5 +1,9 @@
 export default function useDateFormatter() {
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString?: string) => {
+    if (!dateString) {
+      return '';
+    }
+
     const date = new Date(dateString);
 
     const day = String(date.getDate()).padStart(2, '0');

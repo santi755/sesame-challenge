@@ -21,7 +21,7 @@
     <div class="flex items-center justify-start">
       <IconBase icon="ClockIcon" class="text-fontTertiary mr-1" :size="12" />
       <ExtraSmallTypography class="text-fontTertiary">
-        {{ formatDate(props.candidate.updatedAt) }}
+        {{ formatDate(props.candidate?.updatedAt) }}
       </ExtraSmallTypography>
     </div>
   </div>
