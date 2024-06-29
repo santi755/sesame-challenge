@@ -19,6 +19,7 @@
 #### Added
 
 - Added modelValue props to form components
+- Added colors from api to the candidate status
 
 #### Change
 
