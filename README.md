@@ -2,6 +2,16 @@
 
 This project is a solution to the Sesame HR challenge. It is a simple web application that allows users to manage vacancies and candidates.
 
+### 1- Create .env.local file
+
+Create a `.env.local` file in the root of the project with the following content (You can use the `.env.example` file as a template):
+
+```sh
+VITE_APP_SESAME_API_URL=
+VITE_APP_SESAME_API_KEY=
+VITE_APP_SESAME_VACANCY_ID=
+```
+
 ### 1- Project Setup with Docker
 
 ```sh
