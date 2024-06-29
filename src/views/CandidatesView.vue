@@ -14,6 +14,10 @@ import StatusPanel from '@src/components/patterns/candidate-status-panel/StatusP
 
 import { useCandidateStore } from '@src/stores/candidate';
 import { useCandidateStatusStore } from '@src/stores/candidateStatus';
+import { useVacancyStore } from '@src/stores/vacancy';
+
+const vacancyStore = useVacancyStore();
+vacancyStore.loadVacancy();
 
 const candidateStatusStore = useCandidateStatusStore();
 candidateStatusStore.listCandidateStatus();

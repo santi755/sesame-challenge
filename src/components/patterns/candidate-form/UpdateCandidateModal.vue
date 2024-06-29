@@ -36,10 +36,7 @@ const submitUpdate = () => {
   if (!candidateData.value) {
     throw new Error('Candidate data is not set');
   }
-  console.log({
-    candidateId: candidateModalStore.candidateId,
-    candidate: candidateData.value
-  });
+
   candidateStore.updateCandidate(candidateModalStore.candidateId, candidateData.value.candidate);
 };
 
