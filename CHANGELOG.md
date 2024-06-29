@@ -6,11 +6,13 @@
 
 - Added new icons to the project
 - Created the candidate status layout
+- Search candidates by name
 
 #### Changed
 
 - Icons types refactored
 - Refactored candidate form and implemented the use case to create and update candidates
+- Refactored vacancyId usage
 
 ### [0.1.4] - 2024-06-28
 
