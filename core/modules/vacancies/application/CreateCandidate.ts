@@ -2,7 +2,7 @@ import { inject, injectable } from 'inversify';
 import { TYPES } from '@core/config/types';
 
 import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRepository';
-import type { Candidate, CreateCandidateDTO } from '@core/modules/vacancies/domain/Candidate';
+import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 
 @injectable()
 export default class CreateCandidate {
@@ -11,7 +11,7 @@ export default class CreateCandidate {
     private candidateRepository: CandidateRepository
   ) {}
 
-  async execute(candidateDto: CreateCandidateDTO, vacancyId: string): Promise<{ data: Candidate }> {
+  async execute(candidateDto: CandidateDTO, vacancyId: string): Promise<{ data: Candidate }> {
     this.validateCandidate(candidateDto);
 
     const candidate: Candidate = {
@@ -22,7 +22,7 @@ export default class CreateCandidate {
     return this.candidateRepository.save(candidate);
   }
 
-  private validateCandidate(candidate: CreateCandidateDTO): void {
+  private validateCandidate(candidate: CandidateDTO): void {
     if (!candidate) {
       throw new Error('Candidate not found');
     }

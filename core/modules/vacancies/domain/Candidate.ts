@@ -6,15 +6,8 @@ export interface Candidate {
   statusId: string;
 }
 
-export interface CreateCandidateDTO {
+export interface CandidateDTO {
   firstName: string;
-  lastName: string;
-  statusId: string;
-}
-
-export interface UpdateCandidateDTO {
-  id: string;
-  firtName: string;
   lastName: string;
   statusId: string;
 }
