@@ -5,13 +5,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { icons } from '@src/components/atoms/icons/icons';
+import type { Icon } from '@src/types/icon';
 
-interface Props {
-  icon?: keyof typeof icons;
-  size: number;
-}
-
-const props = defineProps<Props>();
+const props = defineProps<Icon>();
 
 const iconComponent = computed(() => {
   if (!props.icon) return null;

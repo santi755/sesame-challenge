@@ -6,6 +6,7 @@ import InboxIcon from '@src/components/atoms/icons/library/InboxIcon.vue';
 import SearchIcon from '@src/components/atoms/icons/library/SearchIcon.vue';
 import StarIcon from '@src/components/atoms/icons/library/StarIcon.vue';
 import UserIcon from '@src/components/atoms/icons/library/UserIcon.vue';
+import VerticalDotsIcon from '@src/components/atoms/icons/library/VerticalDotsIcon.vue';
 
 export const icons = {
   BanIcon,
@@ -15,5 +16,6 @@ export const icons = {
   InboxIcon,
   SearchIcon,
   StarIcon,
-  UserIcon
+  UserIcon,
+  VerticalDotsIcon
 };
