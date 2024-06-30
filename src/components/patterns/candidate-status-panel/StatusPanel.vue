@@ -1,10 +1,10 @@
 <template>
-  <TabPanel class="mt-2">
+  <TabPanel class="flex flex-col mt-2 flex-grow">
     <template #header>
       <HeaderStatusPanel class="mb-4" />
     </template>
     <template #content>
-      <ContentStatusPanel />
+      <ContentStatusPanel class="flex-grow" />
     </template>
   </TabPanel>
 </template>

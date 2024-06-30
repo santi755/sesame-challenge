@@ -1,5 +1,5 @@
 <template>
-  <TemplateBase>
+  <TemplateBase class="h-screen">
     <template #title>Reclutamiento</template>
 
     <template #content>

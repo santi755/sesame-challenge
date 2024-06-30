@@ -1,4 +1,3 @@
-// TODO: Refactor this moving Symbol to each file that uses it
 export const TYPES = {
   // Repositories
   CandidateRepository: Symbol.for('CandidateRepository'),
