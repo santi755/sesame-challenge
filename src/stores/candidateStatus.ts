@@ -13,8 +13,8 @@ import type { CandidateStatusStyle } from '@src/types/candidateStatus';
 const TEMPORAL_CANDIDATE_STATUS_STYLES: CandidateStatusStyle = new Map([
   ['New', { color: 'accentGrass200', icon: 'InboxIcon' }],
   ['Accepted', { color: 'accentTurquoise200', icon: 'UserIcon' }],
-  ['Interview', { color: 'accentBlue200 ', icon: 'ConfettiIcon' }],
-  ['Selected', { color: 'fontPrimary', icon: 'SelectedIcon' }],
+  ['Interview', { color: 'fontLink', icon: 'SelectedIcon' }],
+  ['Selected', { color: 'accentBlue200', icon: 'ConfettiIcon' }],
   ['Discarded', { color: 'extracolorA300', icon: 'BanIcon' }]
 ]);
 

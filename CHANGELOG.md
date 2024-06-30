@@ -1,5 +1,19 @@
 # Sesame challenge Changelog
 
+### [0.1.6] - 2024-06-29
+
+#### Added
+
+- Created a draggable generic library as composable
+- Implemented drag and drop for candidate groups
+- Added mother patterns tests
+- Configure vitests to run with inversify
+
+#### Changed
+
+- Refactor candidate filter to use the new search by name
+- Refactor candidate groups to use our draggable generic library
+
 ### [0.1.5] - 2024-06-29
 
 #### Added

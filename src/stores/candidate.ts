@@ -1,9 +1,10 @@
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 
 import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 
 import { useVacancyStore } from '@src/stores/vacancy';
+import { useCandidateStatusStore } from '@src/stores/candidateStatus';
 import useListCandidatesByVacancy from '@src/composables/use-cases/ListCandidatesByVacancy';
 import useCreateCandidate from '@src/composables/use-cases/CreateCandidate';
 import useUpdateCandidate from '@src/composables/use-cases/UpdateCandidate';
@@ -12,17 +13,37 @@ export const useCandidateStore = defineStore('candidate', () => {
   const candidates = ref<Candidate[]>([]);
   const searchText = ref('');
 
-  const getCandidatesFiltered = () => {
+  const vacancyStore = useVacancyStore();
+  const vacancyId = vacancyStore.getVacancyId();
+
+  const candidatesBySearchText = computed(() => {
     return candidates.value.filter((candidate) => {
       const completeName = `${candidate.firstName} ${candidate.lastName}`.toLowerCase();
       const search = searchText.value.toLowerCase();
 
       return completeName.includes(search);
     });
-  };
+  });
 
-  const vacancyStore = useVacancyStore();
-  const vacancyId = vacancyStore.getVacancyId();
+  const candidatesGroupedByStatus = computed(() => {
+    const candidateStatusStore = useCandidateStatusStore();
+    const groupedByStatus = candidateStatusStore.candidateStatus.map((status) => {
+      const candidatesFiltered = candidatesBySearchText.value.filter(
+        (candidate) => candidate.statusId === status.id
+      );
+
+      return {
+        ...status,
+        candidates: candidatesFiltered
+      };
+    });
+
+    return groupedByStatus;
+  });
+
+  const getCandidateById = (candidateId: string) => {
+    return candidates.value.find((candidate) => candidate.id === candidateId);
+  };
 
   const createCandidate = async (candidate: CandidateDTO) => {
     try {
@@ -67,8 +88,9 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   return {
     candidates,
+    candidatesGroupedByStatus,
+    getCandidateById,
     searchText,
-    getCandidatesFiltered,
     listCandidatesByVacancy,
     createCandidate,
     updateCandidate

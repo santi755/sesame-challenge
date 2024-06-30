@@ -1,5 +1,8 @@
 <template>
-  <div class="border border-neutral200 rounded-xl py-2 px-3 bg-background50 my-2 cursor-pointer">
+  <div
+    class="border border-neutral200 rounded-xl py-2 px-3 bg-background50 my-2 cursor-pointer"
+    draggable="true"
+  >
     <div class="flex content-between items-center mb-1">
       <div class="w-10/12">
         <MediumSemiboldTypography class="truncate">{{

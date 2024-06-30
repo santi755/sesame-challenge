@@ -1,6 +1,7 @@
 <template>
+  <!-- TODO: Adjust main content to the screen height -->
   <div class="bg-neutral100">
-    <div class="container mx-auto flex h-screen border-r border-neutral200 bg-background50">
+    <div class="container mx-auto flex border-r border-neutral200 bg-background50">
       <NavigationSidebar class="w-1/5"></NavigationSidebar>
 
       <div class="flex-1 px-6 py-2 w-4/5">
