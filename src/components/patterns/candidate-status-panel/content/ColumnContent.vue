@@ -6,7 +6,7 @@
       <MediumBoldTypography class="leading-5 ml-1">{{ props.status.name }}</MediumBoldTypography>
     </div>
 
-    <div>
+    <div class="column-content-cards overflow-x-auto">
       <CardColumnContent
         v-for="(candidate, key) in filteredCandidates"
         :candidate="candidate"
@@ -40,3 +40,27 @@ const statusIcon: ComputedRef<IconType> = computed(() => {
   return props.status.icon || 'InboxIcon';
 });
 </script>
+
+<style scoped>
+/* width */
+.column-content-cards::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+.column-content-cards::-webkit-scrollbar-track {
+  background: rgb(var(--background50));
+  border-radius: 1rem;
+}
+
+/* Handle */
+.column-content-cards::-webkit-scrollbar-thumb {
+  background: rgb(var(--fontPrimary));
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+.column-content-cards::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--fontPrimary));
+}
+</style>
