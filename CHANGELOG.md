@@ -6,6 +6,8 @@
 
 - Created a draggable generic library as composable
 - Implemented drag and drop for candidate groups
+- Added mother patterns tests
+- Configure vitests to run with inversify
 
 #### Changed
 
