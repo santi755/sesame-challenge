@@ -1,5 +1,5 @@
 <template>
-  <ModalBase v-if="isVisible" @close="closeModal">
+  <ModalBase v-if="isVisible" @close="closeModal" :disableSubmit="disableSubmit">
     <template #title> Añadir candidato </template>
     <template #content>
       <CandidateForm ref="candidateData" :candidate="candidateInitialData" />
@@ -41,4 +41,13 @@ const closeModal = (submit: boolean) => {
 const isVisible = computed(
   () => candidateModalStore.isVisible && candidateModalStore.mode === 'create'
 );
+
+const disableSubmit = computed(() => {
+  if (!candidateData.value) {
+    return true;
+  }
+
+  const { firstName, lastName, statusId } = candidateData.value.candidate;
+  return !firstName || !lastName || !statusId;
+});
 </script>

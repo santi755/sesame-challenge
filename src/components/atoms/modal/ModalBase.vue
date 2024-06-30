@@ -16,7 +16,7 @@
         <SecondaryButton @click="closeModal(false)" class="mr-4 w-1/4">
           <slot name="button-cancel"></slot>
         </SecondaryButton>
-        <PrimaryButton @click="closeModal(true)" class="mr w-1/4">
+        <PrimaryButton @click="closeModal(true)" class="mr w-1/4" :disabled="props.disableSubmit">
           <slot name="button-action"></slot>
         </PrimaryButton>
       </div>
@@ -30,6 +30,10 @@ import SecondaryButton from '@src/components/atoms/buttons/SecondaryButton.vue';
 import BigBoldTypography from '@src/components/atoms/typography/BigBoldTypography.vue';
 
 const emit = defineEmits(['close']);
+
+const props = defineProps<{
+  disableSubmit: boolean;
+}>();
 
 const closeModal = (submit: boolean) => {
   emit('close', submit);

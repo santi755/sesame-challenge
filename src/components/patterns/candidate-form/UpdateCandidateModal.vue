@@ -1,5 +1,5 @@
 <template>
-  <ModalBase v-if="isVisible" @close="closeModal">
+  <ModalBase v-if="isVisible" @close="closeModal" :disableSubmit="disableSubmit">
     <template #title> Actualizar candidato </template>
     <template #content>
       <CandidateForm ref="candidateData" :candidate="candidateSelected" />
@@ -54,5 +54,14 @@ const candidateSelected: ComputedRef<CandidateFormType> = computed((): Candidate
     lastName: candidate?.lastName || '',
     statusId: candidate?.statusId || ''
   };
+});
+
+const disableSubmit = computed(() => {
+  if (!candidateData.value) {
+    return true;
+  }
+
+  const { firstName, lastName, statusId } = candidateData.value.candidate;
+  return !firstName || !lastName || !statusId;
 });
 </script>

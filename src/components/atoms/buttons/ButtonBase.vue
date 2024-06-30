@@ -7,4 +7,9 @@
   </button>
 </template>
 
-<script setup lang="ts"></script>
+<style scoped>
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+</style>
