@@ -13,4 +13,8 @@ export default class CandidateMother {
       statusId: faker.string.uuid()
     };
   }
+
+  static candidateId(): string {
+    return faker.string.uuid();
+  }
 }

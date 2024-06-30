@@ -1,6 +1,6 @@
 # Sesame challenge Changelog
 
-### [0.1.6] - 2024-06-29
+### [0.1.6] - 2024-06-30
 
 #### Added
 
@@ -8,6 +8,7 @@
 - Implemented drag and drop for candidate groups
 - Added mother patterns tests
 - Configure vitests to run with inversify
+- Added unit tests for CandidateForm component
 
 #### Changed
 

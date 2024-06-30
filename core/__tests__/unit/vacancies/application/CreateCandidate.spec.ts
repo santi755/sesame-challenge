@@ -20,6 +20,7 @@ describe('CreateCandidate', () => {
       const expectedCandidate = await createCandidate.execute(candidate, candidate.vacancyId);
 
       expect(expectedCandidate.data).toEqual(candidate);
+      candidateRepository.shouldSave();
     });
   });
 });
