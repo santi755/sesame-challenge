@@ -8,10 +8,12 @@ export default {
         'bg-accentBlue200',
         'bg-accentTurquoise200',
         'bg-extracolorA300',
+        'bg-fontLink',
         'text-accentGrass200',
         'text-accentBlue200',
         'text-accentTurquoise200',
-        'text-extracolorA300'
+        'text-extracolorA300',
+        'text-fontLink'
       ]
     }
   },
