@@ -4,6 +4,18 @@
 
 #### Added
 
+- Created a draggable generic library as composable
+- Implemented drag and drop for candidate groups
+
+#### Changed
+
+- Refactor candidate filter to use the new search by name
+- Refactor candidate groups to use our draggable generic library
+
+### [0.1.5] - 2024-06-29
+
+#### Added
+
 - Added new icons to the project
 - Created the candidate status layout
 - Search candidates by name
