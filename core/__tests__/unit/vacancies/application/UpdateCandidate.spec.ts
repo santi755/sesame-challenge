@@ -34,6 +34,7 @@ describe('CreateCandidate', () => {
         ...candidateDTO,
         vacancyId: candidate.vacancyId
       });
+      candidateRepository.shouldUpdate();
     });
   });
 });
