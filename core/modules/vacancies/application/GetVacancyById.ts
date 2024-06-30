@@ -4,9 +4,11 @@ import { TYPES } from '@core/config/types';
 import type VacancyRepository from '@core/modules/vacancies/domain/VacancyRepository';
 import type { Vacancy } from '@core/modules/vacancies/domain/Vacancy';
 
+// @ts-ignore
 @injectable()
 export default class GetVacancyById {
   constructor(
+    // @ts-ignore
     @inject(TYPES.VacancyRepository)
     private vacancyRepository: VacancyRepository
   ) {}

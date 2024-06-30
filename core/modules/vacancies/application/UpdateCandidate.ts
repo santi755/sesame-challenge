@@ -6,9 +6,11 @@ import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Can
 import CandidateIdNotFoundException from '@core/modules/vacancies/application/exceptions/CandidateIdNotFoundException';
 import CandidateNotFoundException from '@core/modules/vacancies/application/exceptions/CandidateNotFoundException';
 
+// @ts-ignore
 @injectable()
 export default class UpdateCandidate {
   constructor(
+    // @ts-ignore
     @inject(TYPES.CandidateRepository)
     private candidateRepository: CandidateRepository
   ) {}

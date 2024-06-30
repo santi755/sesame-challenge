@@ -4,9 +4,11 @@ import { TYPES } from '@core/config/types';
 import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRepository';
 import type { Candidate, CandidateDTO } from '@core/modules/vacancies/domain/Candidate';
 
+// @ts-ignore
 @injectable()
 export default class CreateCandidate {
   constructor(
+    // @ts-ignore
     @inject(TYPES.CandidateRepository)
     private candidateRepository: CandidateRepository
   ) {}

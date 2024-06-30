@@ -5,9 +5,11 @@ import type HttpConnector from '@core/modules/vacancies/infrastructure/http/Http
 import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRepository';
 import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
 
+// @ts-ignore
 @injectable()
 class HttpCandidateRepository implements CandidateRepository {
   constructor(
+    // @ts-ignore
     @inject(TYPES.HttpConnector)
     private httpConnector: HttpConnector
   ) {}

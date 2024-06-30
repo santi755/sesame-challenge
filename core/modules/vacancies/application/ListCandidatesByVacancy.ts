@@ -5,9 +5,11 @@ import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRe
 import type { Candidate } from '@core/modules/vacancies/domain/Candidate';
 import VacancyIdNotFoundException from '@core/modules/vacancies/application/exceptions/VacancyIdNotFoundException';
 
+// @ts-ignore
 @injectable()
 export default class ListCandidatesByVacancy {
   constructor(
+    // @ts-ignore
     @inject(TYPES.CandidateRepository)
     private candidateRepository: CandidateRepository
   ) {}

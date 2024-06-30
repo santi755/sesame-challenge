@@ -3,6 +3,7 @@ import { injectable } from 'inversify';
 import type HttpConnector from '@core/modules/vacancies/infrastructure/http/HttpConnector';
 import EnvConfig from '@core/config/env/EnvConfig';
 
+// @ts-ignore
 @injectable()
 export default class FetchHttpConnector implements HttpConnector {
   constructor(
