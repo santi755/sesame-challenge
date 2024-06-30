@@ -32,8 +32,16 @@ The application will be available at [http://localhost:5173/](http://localhost:5
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
+To run the unit tests, you can use the following command in local (After executing the `npm install` command):
+
 ```sh
 npm run test:unit
+```
+
+Or you can run the tests in the Docker container:
+
+```sh
+docker exec -t <containerID> npm run test:unit
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
