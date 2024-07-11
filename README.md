@@ -1,6 +1,6 @@
-# Sesame HR challenge
+# Vue3 Hexagonal Architecture
 
-This project is a solution to the Sesame HR challenge. It is a simple web application that allows users to manage vacancies and candidates.
+It is a simple web application that allows users to manage vacancies and candidates.
 
 ### 1 - Create .env.local file
 
