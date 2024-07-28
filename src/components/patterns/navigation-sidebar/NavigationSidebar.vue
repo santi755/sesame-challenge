@@ -1,7 +1,7 @@
 <template>
   <SidebarBase class="bg-fontLight shadow-right py-2 px-2">
     <div class="flex items-center justify-start w-full h-12 pb-2 px-3">
-      <img src="@src/assets/sesamehr-logo.svg" alt="Logo" class="h-8" />
+      <img src="https://placehold.co/152x32" alt="Logo" class="h-8" />
     </div>
 
     <DropdownNavigationSidebar />

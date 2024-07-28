@@ -7,8 +7,8 @@ import EnvConfig from '@core/config/env/EnvConfig';
 @injectable()
 export default class FetchHttpConnector implements HttpConnector {
   constructor(
-    private baseUrl = EnvConfig.get('VITE_APP_SESAME_API_URL'),
-    private apiKey = EnvConfig.get('VITE_APP_SESAME_API_KEY')
+    private baseUrl = EnvConfig.get('VITE_APP_API_URL'),
+    private apiKey = EnvConfig.get('VITE_APP_API_KEY')
   ) {}
 
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {

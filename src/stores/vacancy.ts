@@ -9,7 +9,7 @@ export const useVacancyStore = defineStore('vacancy', () => {
 
   const loadVacancy = async () => {
     try {
-      const vacancyId = EnvConfig.get('VITE_APP_SESAME_VACANCY_ID');
+      const vacancyId = EnvConfig.get('VITE_APP_VACANCY_ID');
       const { getVacancyById } = useGetVacancyById();
       const response = await getVacancyById.execute(vacancyId);
       vacancy.value = response.data;

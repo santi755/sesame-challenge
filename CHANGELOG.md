@@ -1,4 +1,4 @@
-# Sesame challenge Changelog
+# Vue3 Hexagonal Architecture Changelog
 
 ### [0.1.6] - 2024-06-30
 
@@ -71,7 +71,7 @@
 
 #### Added
 
-- Initial release of Sesame challenge
+- Initial release of Vue3 Hexagonal Architecture
 - Added Docker for development purposes
 - Created common components for the project (Atomic design)
 - Created the basic layout (Template) for the project

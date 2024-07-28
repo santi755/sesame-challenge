@@ -1,11 +1,11 @@
 import { Container } from 'inversify';
 import { TYPES } from '@core/config/types';
 
-import HttpCandidateRepository from '@core/modules/vacancies/infrastructure/repositories/HttpCandidateRepository';
+import InMemoryCantidateRepository from '@core/modules/vacancies/infrastructure/inMemoryRepository/InMemoryCantidateRepository';
 import type CandidateRepository from '@core/modules/vacancies/domain/CandidateRepository';
-import HttpCandidateStatusRepository from '@core/modules/vacancies/infrastructure/repositories/HttpCandidateStatusRepository';
+import InMemoryCandidateStatusRepository from '@core/modules/vacancies/infrastructure/inMemoryRepository/InMemoryCantidateStatusRepository';
 import type CandidateStatusRepository from '@core/modules/vacancies/domain/CandidateStatusRepository';
-import HttpVacancyRepository from '@core/modules/vacancies/infrastructure/repositories/HttpVacancyRepository';
+import InMemoryVacancyRepository from '@core/modules/vacancies/infrastructure/inMemoryRepository/InMemoryVacancyRepository';
 import type VacancyRepository from '@core/modules/vacancies/domain/VacancyRepository';
 import CreateCandidate from '@core/modules/vacancies/application/CreateCandidate';
 import ListCandidatesByVacancy from '@core/modules/vacancies/application/ListCandidatesByVacancy';
@@ -15,11 +15,18 @@ import GetVacancyById from '@core/modules/vacancies/application/GetVacancyById';
 
 export function configureVacancies(container: Container) {
   // Repositories
-  container.bind<CandidateRepository>(TYPES.CandidateRepository).to(HttpCandidateRepository);
+  container
+    .bind<CandidateRepository>(TYPES.CandidateRepository)
+    .to(InMemoryCantidateRepository)
+    .inSingletonScope();
   container
     .bind<CandidateStatusRepository>(TYPES.CandidateStatusRepository)
-    .to(HttpCandidateStatusRepository);
-  container.bind<VacancyRepository>(TYPES.VacancyRepository).to(HttpVacancyRepository);
+    .to(InMemoryCandidateStatusRepository)
+    .inSingletonScope();
+  container
+    .bind<VacancyRepository>(TYPES.VacancyRepository)
+    .to(InMemoryVacancyRepository)
+    .inSingletonScope();
 
   // Use cases
   container.bind<CreateCandidate>(TYPES.CreateCandidate).to(CreateCandidate);
