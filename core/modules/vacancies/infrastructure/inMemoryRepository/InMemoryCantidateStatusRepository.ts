@@ -8,23 +8,38 @@ class InMemoryCandidateStatusRepository implements CandidateStatusRepository {
   private candidateStatus: CandidateStatus[] = [
     {
       id: 'ac0ae28e-417c-4002-b2cd-416a61aa4be5',
-      name: 'Applied',
-      order: 1
+      name: 'New',
+      order: 1,
+      color: 'accentGrass200',
+      icon: 'InboxIcon'
     },
     {
       id: 'ac0ae28e-417c-4002-b2cd-416a61aa4be6',
-      name: 'Interviewing',
-      order: 2
+      name: 'Accepted',
+      order: 2,
+      color: 'accentTurquoise200',
+      icon: 'UserIcon'
     },
     {
       id: 'ac0ae28e-417c-4002-b2cd-416a61aa4be7',
-      name: 'Hired',
-      order: 3
+      name: 'Interview',
+      order: 3,
+      color: 'fontLink',
+      icon: 'SelectedIcon'
     },
     {
       id: 'ac0ae28e-417c-4002-b2cd-416a61aa4be8',
-      name: 'Rejected',
-      order: 4
+      name: 'Selected',
+      order: 4,
+      color: 'accentBlue200',
+      icon: 'ConfettiIcon'
+    },
+    {
+      id: 'ac0ae28e-417c-4002-b2cd-416a61aa4be9',
+      name: 'Discarded',
+      order: 5,
+      color: 'extracolorA300',
+      icon: 'BanIcon'
     }
   ];
 
